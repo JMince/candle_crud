@@ -1,0 +1,17 @@
+<h1>List all candles</h1>
+
+
+<% @candles.each do |candle| %>
+<%= link_to candle.scent, candle_path(candle) %>
+<br>
+<%= candle.color %>
+<br>
+<%= candle.cost %>
+<br><br>
+<%= link_to 'Edit Candle', edit_candle_path(candle) %>
+<br><br>
+<%= link_to 'Delete Candle', candle_path(candle), method: 'delete', data:{confirm: "Don't Do It - You'll Be Sorry"} %>
+<hr>
+<% end %>
+<br><br>
+<%= link_to 'New Candle', new_candle_path %>

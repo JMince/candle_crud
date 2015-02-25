@@ -1,0 +1,20 @@
+<%= form_for @candle do |f| %>
+<% if @candle.errors.any? %>
+<h1><%= pluralize(@candle.errors.count, "Error") %> prohibited this from being saved.</h1>
+<ul>
+<% @candle.errors.full_messages.each do |message| %>
+<li> <%= message %></li>
+<% end %>
+</ul>
+<% end %>
+<%= f.label :scent %>
+<%= f.text_field :scent %>
+<br>
+<%= f.label :color %>
+<%= f.text_field :color %>
+<br>
+<%= f.label :cost %>
+<%= f.number_field :cost %>
+<br>
+<%= f.submit %>
+<% end %>
